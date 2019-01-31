@@ -1,0 +1,110 @@
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button> -->
+<mat-horizontal-stepper [linear]="isLinear" labelPosition="bottom" #stepper>
+
+<!-- CONTENT HEADER START -->
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Content Header</ng-template>
+      <mat-form-field>
+          <mat-select placeholder="Channel" required formControlName="firstCtrl">
+            <mat-option *ngFor="let channel of channels" [value]="channel.value" >
+              {{channel.viewValue}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-select placeholder="Content Type" required  formControlName="firstCtrl1">
+            <mat-option *ngFor="let content_type of content_types" [value]="content_type.value">
+              {{content_type.viewValue}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+<!-- CONTENT HEADER END -->
+
+<!-- CONTENT DETAILS START -->
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Content Details</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Content Title" formControlName="secondCtrl" required>
+      </mat-form-field><br>
+      <mat-form-field>
+          <mat-label>Season</mat-label>
+          <input matInput type="number" id="myNumber" />
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Episode</mat-label>
+          <input matInput type="number" id="myNumber1" />
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Segment</mat-label>
+          <input matInput type="number" id="myNumber2" />
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Airing Date</mat-label>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+<!-- CONTENT DETAILS END -->
+
+<!-- REVIEW COMMENTS START -->
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Review Comments</ng-template>
+      <app-tagging></app-tagging>
+      <mat-form-field class="review-comments">
+        <textarea matInput placeholder="Review Comments"></textarea>
+      </mat-form-field>     
+      
+      <div class="from-to-time">
+        <mat-form-field>
+          <mat-label>From Time (hh:mm:ss)</mat-label>
+          <input matInput />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>To Time (hh:mm:ss)</mat-label>
+            <input matInput />
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+<!-- REVIEW COMMENTS END -->
+
+<!-- CONFIRMATION START -->
+  <mat-step [stepControl]="fourthFormGroup" [completed]="false">
+    <form [formGroup]="fourthFormGroup">
+      <ng-template matStepLabel>Confirmation</ng-template>
+      <mat-form-field>
+        <mat-select placeholder="Status" required formControlName="fourthCtrl">
+          <mat-option *ngFor="let confirmation of confirmation_val" [value]="confirmation.value" >
+            {{confirmation.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+<!-- CONFIRMATION END -->
+
+</mat-horizontal-stepper>

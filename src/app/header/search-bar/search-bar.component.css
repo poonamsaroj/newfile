@@ -1,0 +1,21 @@
+.example-form{
+    display: flex;
+    min-height: auto;
+    min-width: auto;
+    font-size: 13px;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    margin: 0 100px 0 100px;
+}
+.mat-form-field-flex{
+    /* border: 1px solid red!important; */
+    /* border-radius: 50%; */
+}
+/* .mat-form-field-infix{
+    display: none;
+    border: 1px solid red!important;
+} */
+.example-full-width .mat-form-field-underline {
+    display: none;
+}

@@ -1,0 +1,15 @@
+.next-button{
+    flex: 1 1 auto;
+}
+form{
+    margin-top: 5%;
+}
+mat-form-field{
+    padding-right:5%;
+}
+/* .example-chip-list{
+    width: 50%;
+}
+.review-comments{
+    width: 50%;
+} */

@@ -1,0 +1,20 @@
+.logo{
+    width: 10%;
+    height: auto;
+} 
+.example-spacer {
+    flex: 1 1 auto;
+}
+#headerSearch{
+    width: 100%; 
+}
+.example-form {
+    min-width: 100px;
+    max-width: 400px;
+    font-size: 10px;
+    margin-top:15px; 
+    display: inline-block;
+}
+.example-full-width {
+    width: 100%;
+}

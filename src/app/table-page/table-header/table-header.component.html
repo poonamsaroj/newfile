@@ -1,0 +1,20 @@
+<mat-toolbar color="#000" class="toolbar">
+  <mat-toolbar-row>
+    <img src="assets/img/logo.png" class="logo">
+    <form class="example-form" style="margin-left:20%" id="headerSearch">
+      <mat-form-field class="example-full-width">
+        <mat-icon matPrefix class="search-icon">search</mat-icon>
+        <input type="text" matInput placeholder="Channel, Content Type, Content Title, Theme"
+          #box (keyup.enter)="onEnter(box.value)">      
+        <mat-icon matSuffix class="mic-icon">mic</mat-icon>
+      </mat-form-field>
+    </form>
+    <span class="example-spacer"></span>
+    <mat-form-field class="example-form">
+      <mat-label>Airing Date</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </mat-toolbar-row>
+</mat-toolbar>
