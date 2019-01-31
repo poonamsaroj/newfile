@@ -2,20 +2,26 @@
     display: flex;
     min-height: auto;
     min-width: auto;
-    font-size: 13px;
+    font-size: 15px;
     flex-direction: column;
     width: 100%;
-    border: 1px solid #dfdfdf;
-    margin: 0 100px 0 100px;
+    margin: 15px 50px 0 100px;
+}
+.example-full-width{
+    width: 100%;
 }
 .mat-form-field-flex{
-    /* border: 1px solid red!important; */
-    /* border-radius: 50%; */
+    border: 1px solid #dfdfdf;
+    border-radius: 20px;
 }
-/* .mat-form-field-infix{
-    display: none;
-    border: 1px solid red!important;
-} */
 .example-full-width .mat-form-field-underline {
     display: none;
+}
+.search-icon{
+    padding: 0 10px 0 15px;
+    color: #848D95;
+}
+.mic-icon{
+    padding: 0 15px 0 70px;
+    color: #848D95;
 }

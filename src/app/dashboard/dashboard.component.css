@@ -1,4 +1,6 @@
-
+.dashboard{
+    margin-top: 5em;
+}
 .chartjs-render-monitor{
     display: inline-block;
     width: 100px;
